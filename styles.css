@@ -1,0 +1,100 @@
+   :root {
+    --burger-width: 350px;
+    --burger-height: 300px;
+    --ingredient-width: 88%;
+    --cheese-lettuce-width: 98%;
+    --cheese-height: 5%;
+    --lettuce-height: 10%;
+    --tomato-height: 4%;
+    --patty-height: 11%;
+    --bun-height: 20%;
+    --bun-bottom-height: 15%;
+    --transition-duration: 0.5s;
+    --burger-hover-scale: 1.1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+  
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--burger-width);
+    height: var(--burger-height);
+    transition: all .2s ease-in-out;
+    transition-duration: var(--transition-duration);
+}
+
+.burger div {
+    margin: 2.5px 0;
+    transition-duration: var(--transition-duration);
+}
+  
+.burger:hover {
+    transform: scale(var(--burger-hover-scale));
+}
+
+.burger:hover div {
+    margin: 5px 0;
+}
+  
+.bun {
+    width: var(--ingredient-width);
+    height: var(--bun-height);
+    background: linear-gradient(0deg, #945e0e 0%, #f08d28 80%, #f8c291 100%);
+    border-radius: 100% 100% 0 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+  
+.bun.bottom {
+    height: var(--bun-bottom-height);
+    transform: rotate(180deg);
+    border-radius: 32.5px 32.5px 0 0;
+}
+  
+.lettuce, .cheese {
+    width: var(--cheese-lettuce-width);
+    height: var(--lettuce-height);
+    background: #1fa816;
+    border-radius: 20px;
+}
+  
+.cheese {
+    height: var(--cheese-height);
+    background: #ffd700;
+}
+  
+.tomato {
+    width: var(--ingredient-width);
+    height: var(--tomato-height);
+    background: #ea2316;
+}
+  
+.patty {
+    background: #8b4513;
+    border-radius: 20px;
+    height: var(--patty-height);
+    width: var(--ingredient-width);
+}
+
+@media (max-width: 576px) {
+    .burger {
+      width: 200px;
+      height: 250px;
+    }
+}
+  
+@media (max-width: 400px) {
+    .burger {
+      width: 150px;
+      height: 225px;
+    }
+}
